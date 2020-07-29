@@ -3,7 +3,7 @@ library(ggplot2)
 library(grid)
 library(gridExtra)
 
-plot2.auc.pe <- function(file.name, times=1:10, I=5, data.name){
+plot2.auc.pe <- function(file.name, times, I=5, data.name){
   load(file.name)
   pd <- position_dodge(0.3)
   

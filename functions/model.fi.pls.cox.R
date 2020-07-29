@@ -8,7 +8,7 @@ fi.pls.cox <- function(
   ncut.var,
   plsr.validation=c("CV", "none", "LOO"),
   random.cut=FALSE,
-  show=c("lps, models"),
+  show=c("lps", "models"),
   newX,
   hide.message=TRUE
 )

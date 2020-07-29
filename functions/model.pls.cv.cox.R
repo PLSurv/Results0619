@@ -1,7 +1,7 @@
 ## PLS-Cox model
 ## with/or without PLS-RMSE-CV optimal component
 
-pls..cv.cox <- function(
+pls.cv.cox <- function(
   X,      
   time,   
   event,  
