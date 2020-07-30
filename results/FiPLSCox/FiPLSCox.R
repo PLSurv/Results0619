@@ -107,7 +107,7 @@ p8 <- plot2.auc.pe("Comp3_LUNG.RData", times = times,  data.name = "LUNG with 42
 ##NKI
 load("../../Datasets/2NKI.RData")
 DT <- NKI
-times <- 0.5:8.5
+times <-seq(1,9,0.5)
 max.comp1 <- 13 #round(nrow(DT)/25)
 max.comp<- 13
 LOOP5(file.name = "Comp3_NKI50.RData",I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 50)
