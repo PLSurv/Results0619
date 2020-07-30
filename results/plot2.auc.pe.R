@@ -24,11 +24,11 @@ plot2.auc.pe <- function(file.name, times, I=5, data.name){
   pauc$time <- factor(pauc$time, levels = paste0(times,"y"))
   
   p1<-ggplot(pauc, aes(x=time, y=auc, color=auc.grp, group=auc.grp))+
-    geom_errorbar(aes(ymin=pmax(0.5,auc-sd), ymax=pmin(auc+sd,1),color=auc.grp),
+    geom_errorbar(aes(ymin=pmax(0.7,auc-sd), ymax=pmin(auc+sd,1),color=auc.grp),
                   width=0.2, size=0.25, position = pd)+
-    geom_line(position = pd, linetype = "dotted", size=0.25)+
-    geom_point(size=1,position = pd) +
-    ylim(0.5,1)+
+    geom_line(position = pd, linetype = "solid", size=0.1)+
+    geom_point(size=0.5,position = pd,shape=3) +
+    ylim(0.7,1)+
     xlab("")+ylab("mean AUC")+
     geom_rug(size=0.2,position = pd)+
     theme_tufte()+
@@ -55,11 +55,11 @@ plot2.auc.pe <- function(file.name, times, I=5, data.name){
   ppe$time <- factor(ppe$time, levels = paste0(times,"y"))
   
   p2 <-ggplot(ppe, aes(x=time, y=pe, color=pe.grp, group=pe.grp))+
-    geom_errorbar(aes(ymin=pmax(0,pe-sd), ymax=pmin(pe+sd,0.5),color=pe.grp),
+    geom_errorbar(aes(ymin=pmax(0,pe-sd), ymax=pmin(pe+sd,0.3),color=pe.grp),
                   width=0.2, size=0.25, position = pd)+
-    geom_line(position = pd,linetype = "dotted", size=0.25)+
-    geom_point(size=1,position = pd) +
-    ylim(0,0.5)+
+    geom_line(position = pd,linetype = "solid", size=0.1)+
+    geom_point(size=0.5,position = pd,shape=3) +
+    ylim(0,0.3)+
     xlab("")+ylab("Mean PE")+
     geom_rug(size=0.2,position = pd)+
     theme_tufte()+
