@@ -87,19 +87,19 @@ load("../../Datasets/1DLBCL.RData")
 DT<- DLBCL
 #times <- 1:max(DT$years)
 times <- 0.5:8.5
-max.comp1 <- 7 #round(nrow(DT)/25)
-max.comp <- 7
-LOOP5(file.name = "Comp3_DLBCL.RData", I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 30)
+max.comp1 <- 10 #round(nrow(DT)/25)
+max.comp <- 10
+LOOP5(file.name = "Comp3_DLBCL.RData", I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 15)
 p7 <- plot2.auc.pe("Comp3_DLBCL.RData", times = times,  data.name = "DLBCL with 41% censoring")
 #ggsave("C:/Users/ayame/Dropbox/All/Comp3_DLBCL.png",p7)
 
 ## LUNG
 load("../../Datasets/1LUNG.RData")
 DT<- LUNG
-times <- 1:max(DT$years)
+times <- 0.5:4.5
 max.comp1<-5
-max.comp <- 5 #round(nrow(DT)/25)
-LOOP5(file.name = "Comp3_LUNG.RData", I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 100)
+max.comp <-5 #round(nrow(DT)/25)
+LOOP5(file.name = "Comp3_LUNG.RData", I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 30)
 p8 <- plot2.auc.pe("Comp3_LUNG.RData", times = times,  data.name = "LUNG with 42% censoring")
 #ggsave("C:/Users/ayame/Dropbox/All/Comp3_LUNG.png",p8)
 
@@ -107,7 +107,7 @@ p8 <- plot2.auc.pe("Comp3_LUNG.RData", times = times,  data.name = "LUNG with 42
 ##NKI
 load("../../Datasets/2NKI.RData")
 DT <- NKI
-times <- 1:max(DT$years)
+times <- 0.5:8.5
 max.comp1 <- 13 #round(nrow(DT)/25)
 max.comp<- 13
 LOOP5(file.name = "Comp3_NKI50.RData",I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 50)
