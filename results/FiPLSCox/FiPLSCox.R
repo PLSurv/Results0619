@@ -122,3 +122,15 @@ p9 <- plot2.auc.pe("Comp3_NKI50.RData", times = times, data.name = "NKI with 66%
 # LOOP5(file.name = "Comp3_NKI100.RData",I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 100)
 # p9 <- plot2.auc.pe("Comp3_NKI100.RData",  times = times, data.name = "NKI with 66% censoring")
 
+## DLBCL
+load("../../Datasets/DLBCL2.RData")
+DT<- DLBCL2
+#times <- 1:max(DT$years)
+times <- seq(1,8,0.5)
+max.comp1 <- 5#round(nrow(DT)/25)
+max.comp <- 5
+LOOP5(file.name = "Comp3_DLBCL2.RData", I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 30)
+p7 <- plot2.auc.pe("Comp3_DLBCL2.RData", times = times,  data.name = "DLBCL with 24% censoring")
+
+wilcox.test(apply(PE1,1,mean),apply(PE2,1,mean), paired = TRUE)
+wilcox.test(apply(AUC1,1,mean),apply(AUC2,1,mean), paired = TRUE)
