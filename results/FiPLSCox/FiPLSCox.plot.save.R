@@ -60,13 +60,14 @@ load("../../Datasets/DLBCL2.RData")
 DT <- DLBCL2
 times <- seq(0.5,8.5,0.5)
 p10 <- plot2.auc.pe("Comp3_DLBCL2.add.RData", times = times, data.name = "DLBCL with 24% censoring")
-p11 <- plot2.auc.pe("Comp3_DLBCL2.add.RData", times = times, data.name = "DLBCL with 24% censoring")
+p11 <- plot2.auc.pe("Comp3_DLBCL.add.RData", times = times, data.name = "DLBCL with 41% censoring")
 
 
 ggsave("PNG/Comp3_DLBCL.png", p7)
 ggsave("PNG/Comp3_LUNG.png", p8)
 ggsave("PNG/Comp3_NKI.png", p9)
 ggsave("PNG/Comp3_DLBCL2.png", p10)
+ggsave("PNG/Comp3_DLBCL.add.png", p11)
 
 P3 <- gridExtra::grid.arrange(p7, p8, p9, nrow = 3)
 ggsave("~/Documents/Git_yiapr/Thesis/thesis07/X_appendix/figB/FiPLSCox3.png", P3, width = 6, height = 9)
