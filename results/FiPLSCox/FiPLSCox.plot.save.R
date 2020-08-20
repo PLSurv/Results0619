@@ -51,15 +51,21 @@ p7 <- plot2.auc.pe("Comp3_DLBCL.RData", times = times,  data.name = "DLBCL with 
 times <- 0.5:4.5
 p8 <- plot2.auc.pe("Comp3_LUNG.RData", times = times,  data.name = "LUNG with 42% censoring")
 
-load("../../../Datasets/2NKI.RData")
+load("../../Datasets/2NKI.RData")
 DT <- NKI
 times <- seq(1,9,0.5)
 p9 <- plot2.auc.pe("Comp3_NKI50.RData", times = times, data.name = "NKI  with 66% censoring")
+
+load("../../Datasets/DLBCL2.RData")
+DT <- DLBCL2
+times <- seq(1,8,0.5)
+p10 <- plot2.auc.pe("Comp3_DLBCL2.RData", times = times, data.name = "DLBCL  with 24% censoring")
 
 
 ggsave("PNG/Comp3_DLBCL.png", p7)
 ggsave("PNG/Comp3_LUNG.png", p8)
 ggsave("PNG/Comp3_NKI.png", p9)
+ggsave("PNG/Comp3_DLBCL2.png", p10)
 
 P3 <- gridExtra::grid.arrange(p7, p8, p9, nrow = 3)
 ggsave("~/Documents/Git_yiapr/Thesis/thesis07/X_appendix/figB/FiPLSCox3.png", P3, width = 6, height = 9)

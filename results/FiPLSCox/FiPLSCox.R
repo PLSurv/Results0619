@@ -134,5 +134,6 @@ max.comp <- 5
 LOOP5(file.name = "Comp3_DLBCL2.add.RData", I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 30)
 p7 <- plot2.auc.pe("Comp3_DLBCL2.add.RData", times = times,  data.name = "DLBCL with 24% censoring")
 
+
 wilcox.test(apply(PE1,1,mean),apply(PE2,1,mean), paired = TRUE)
 wilcox.test(apply(AUC1,1,mean),apply(AUC2,1,mean), paired = TRUE)
