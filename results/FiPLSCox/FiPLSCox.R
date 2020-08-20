@@ -86,17 +86,19 @@ p6 <- plot2.auc.pe("Comp3_G2_0.7.RData", times = times, data.name = "Gene2 with 
 load("../../Datasets/1DLBCL.RData")
 DT<- DLBCL
 #times <- 1:max(DT$years)
-times <- 0.5:8.5
+#times <- 0.5:8.5
+times <- seq(0.5,8.5,0.5)
 max.comp1 <- 10 #round(nrow(DT)/25)
 max.comp <- 10
-LOOP5(file.name = "Comp3_DLBCL.RData", I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 15)
-p7 <- plot2.auc.pe("Comp3_DLBCL.RData", times = times,  data.name = "DLBCL with 41% censoring")
+LOOP5(file.name = "Comp3_DLBCL.add.RData", I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 30)
+p7 <- plot2.auc.pe("Comp3_DLBCL.add.RData", times = times,  data.name = "DLBCL with 41% censoring")
 #ggsave("C:/Users/ayame/Dropbox/All/Comp3_DLBCL.png",p7)
 
 ## LUNG
 load("../../Datasets/1LUNG.RData")
 DT<- LUNG
-times <- 0.5:4.5
+#times <- 0.5:4.5
+times <- seq(1,8,0.5)
 max.comp1<-5
 max.comp <-5 #round(nrow(DT)/25)
 LOOP5(file.name = "Comp3_LUNG.RData", I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 30)
@@ -126,11 +128,11 @@ p9 <- plot2.auc.pe("Comp3_NKI50.RData", times = times, data.name = "NKI with 66%
 load("../../Datasets/DLBCL2.RData")
 DT<- DLBCL2
 #times <- 1:max(DT$years)
-times <- seq(1,8,0.5)
+times <- seq(0.5,8.5,0.5)
 max.comp1 <- 5#round(nrow(DT)/25)
 max.comp <- 5
-LOOP5(file.name = "Comp3_DLBCL2.RData", I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 30)
-p7 <- plot2.auc.pe("Comp3_DLBCL2.RData", times = times,  data.name = "DLBCL with 24% censoring")
+LOOP5(file.name = "Comp3_DLBCL2.add.RData", I=I, max.comp1=max.comp1,max.comp = max.comp, times=times, ncut.var = 30)
+p7 <- plot2.auc.pe("Comp3_DLBCL2.add.RData", times = times,  data.name = "DLBCL with 24% censoring")
 
 wilcox.test(apply(PE1,1,mean),apply(PE2,1,mean), paired = TRUE)
 wilcox.test(apply(AUC1,1,mean),apply(AUC2,1,mean), paired = TRUE)
