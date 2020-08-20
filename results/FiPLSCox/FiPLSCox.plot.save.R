@@ -54,12 +54,13 @@ p8 <- plot2.auc.pe("Comp3_LUNG.RData", times = times,  data.name = "LUNG with 42
 load("../../Datasets/2NKI.RData")
 DT <- NKI
 times <- seq(1,9,0.5)
-p9 <- plot2.auc.pe("Comp3_NKI50.RData", times = times, data.name = "NKI  with 66% censoring")
+p9 <- plot2.auc.pe("Comp3_NKI50.RData", times = times, data.name = "NKI with 66% censoring")
 
 load("../../Datasets/DLBCL2.RData")
 DT <- DLBCL2
-times <- seq(1,8,0.5)
-p10 <- plot2.auc.pe("Comp3_DLBCL2.RData", times = times, data.name = "DLBCL  with 24% censoring")
+times <- seq(0.5,8.5,0.5)
+p10 <- plot2.auc.pe("Comp3_DLBCL2.add.RData", times = times, data.name = "DLBCL with 24% censoring")
+p11 <- plot2.auc.pe("Comp3_DLBCL2.add.RData", times = times, data.name = "DLBCL with 24% censoring")
 
 
 ggsave("PNG/Comp3_DLBCL.png", p7)
