@@ -13,15 +13,16 @@ cox.by.var <- function(
     
     fm <- as.formula(paste0("Surv(time, event)~", names(X)[i]))
     fit <- coxph(fm, data=data)
-    c(diff(fit$Cox$loglik), predict(fit), predict(fit, newdata=newX))
+    c(predict(fit), predict(fit, newdata=newX))
     
   })
   
-  LP <- list(logLike = LP[1,],
-             lp = LP[2:(nrow(X)+1), which.max(LP[1,])],
-             lpnew=LP[-c(1:(nrow(X)+1)), which.max(LP[1,])])
+  LP <- list(
+             lp.mean = apply(LP[1:nrow(X), ],1,mean),
+             lpnew.mean = apply(LP[-c(1:nrow(X)), ],1,mean)
+  )
   
-  return(LP)
+LP
   
 }
 

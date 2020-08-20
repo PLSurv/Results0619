@@ -45,8 +45,8 @@ LOOP3 <- function(file.name,
     lpnew2 <- predict(fit2, newX=test) 
     
     fit3 <- cox.by.var(X=train[,-c(1:2)], time=train$years, event = train$event, newX = test)
-    lp3 <- fit3$lp.mean
-    lpnew3 <- fit3$lpnew.mean
+    lp3 <- fit3$lp
+    lpnew3 <- fit3$lpnew
     
     
     ## AUC
