@@ -33,7 +33,7 @@ LOOP3 <- function(file.name,
     test <- rbind(E.test,C.test)
     
     # 
-    fit1 <- pls..cv.cox(X=train[,-c(1:2)], time=train$years, event = train$event, max.comp = max.comp,Y.type = "time", 
+    fit1 <- pls.cv.cox(X=train[,-c(1:2)], time=train$years, event = train$event, max.comp = max.comp,Y.type = "time", 
                        plsr.validation = "CV")
     lp1 <- predict(fit1)
     lpnew1 <- predict(fit1, newX=test) 
