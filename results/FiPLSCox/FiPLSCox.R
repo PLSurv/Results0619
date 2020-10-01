@@ -135,5 +135,11 @@ LOOP5(file.name = "Comp3_DLBCL2.add.RData", I=I, max.comp1=max.comp1,max.comp = 
 p7 <- plot2.auc.pe("Comp3_DLBCL2.add.RData", times = times,  data.name = "DLBCL with 24% censoring")
 
 
-wilcox.test(apply(PE1,1,mean),apply(PE2,1,mean), paired = TRUE)
-wilcox.test(apply(AUC1,1,mean),apply(AUC2,1,mean), paired = TRUE)
+wilcox.test(apply(AUC1,1,mean)[1:6],apply(AUC2,1,mean)[1:6], paired = TRUE)
+wilcox.test(apply(PE1,1,mean)[1:6],apply(PE2,1,mean)[1:6], paired = TRUE)
+
+wilcox.test(apply(AUC1,1,mean)[1:9],apply(AUC2,1,mean)[1:9], paired = TRUE)
+wilcox.test(apply(PE1,1,mean)[1:9],apply(PE2,1,mean)[1:9], paired = TRUE)
+
+wilcox.test(apply(AUC1,1,mean)[7:11],apply(AUC2,1,mean)[7:11], paired = TRUE)
+wilcox.test(apply(PE1,1,mean)[7:11],apply(PE2,1,mean)[7:11], paired = TRUE)
